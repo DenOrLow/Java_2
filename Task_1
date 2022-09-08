@@ -1,0 +1,95 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        double tmp, tmp2;
+        int t, s, t2;
+        String str = new String();
+        System.out.println("Enter the number: ");
+        Scanner obj = new Scanner(System.in);
+        tmp = obj.nextDouble();
+        t = (int) tmp;
+        tmp -= t;
+        t2 = t;
+        tmp2 = tmp;
+        System.out.println("Enter the number system: ");
+        s = obj.nextInt();
+        while (t >= s) {
+            if (t % s < 10)
+                str += t % s;
+            else
+                str += (char) ('A' + t % s - 10);
+            t = t / s;
+        }
+        if (t < 10)
+            str += t;
+        else
+            str += (char) ('A' + t - 10);
+        char[] arr = str.toCharArray();
+        for (int i = str.length() - 1; i >= 0; i--)
+            System.out.print(arr[i]);
+        String str2 = new String();
+        while (str2.length() < 3) {
+            tmp *= s;
+            if (tmp > 0) {
+                if (tmp < 10)
+                    str2 += (int) tmp;
+                else
+                    str2 += (char) ('A' + (int)(tmp - 10));
+            } else
+                str2 += 0;
+            t = (int) tmp;
+            tmp -= t;
+        }
+        System.out.print(".");
+        System.out.print(str2 + "\n");
+        t = t2;
+        tmp = tmp2;
+        String str3 = new String();
+        while (t >= 2) {
+            str3 += t % 2;
+            t = t / 2;
+        }
+        str3 += t;
+        arr = str3.toCharArray();
+        for (int i = str3.length() - 1; i >= 0; i--)
+            System.out.print(arr[i]);
+        String str4 = new String();
+        while (str4.length() < 3) {
+            tmp *= 2;
+            if (tmp > 0) {
+                str4 += (int) tmp;
+            } else
+                str4 += 0;
+            t = (int) tmp;
+            tmp -= t;
+        }
+        System.out.print(".");
+        System.out.print(str4 + "\n");
+        t = t2;
+        tmp = tmp2;
+        String str5 = new String();
+        while (t >= 8) {
+            str5 += t % 8;
+            t = t / 8;
+        }
+        str5 += t;
+        arr = str5.toCharArray();
+        for (int i = str5.length() - 1; i >= 0; i--)
+            System.out.print(arr[i]);
+        String str6 = new String();
+        while (str6.length() < 3) {
+            tmp *= 8;
+            if (tmp > 0) {
+                str6 += (int) tmp;
+            } else
+                str6 += 0;
+            t = (int) tmp;
+            tmp -= t;
+        }
+        System.out.print(".");
+        System.out.print(str6);
+    }
+}
